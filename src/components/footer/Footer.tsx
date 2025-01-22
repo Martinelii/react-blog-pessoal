@@ -1,5 +1,4 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
-import { WhatsappLogo } from '@phosphor-icons/react/dist/ssr'
 
 function Footer() {
 
