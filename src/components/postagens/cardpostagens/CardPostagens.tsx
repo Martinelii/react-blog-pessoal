@@ -20,12 +20,12 @@ function CardPostagens ({postagem}:CardPostagensProps) {
                 <h3 className='text-lg font-bold text-center uppercase'>
                     {postagem.usuario?.nome}
                 </h3>
-                <hr /> {/* test */}
             </div>
 
             <div className='p-4 '>
-                    <h4 className='text-lg font-semibold uppercase'>Titulo</h4>
-                    <p>Tema: {postagem.tema?.descricao}</p> {/* acessando tb_tema por postagem 
+                    <h4 className='text-lg font-semibold uppercase'>{postagem.titulo}</h4>
+                    <hr />
+                    <p className=''>Tema: {postagem.tema?.descricao}</p> {/* acessando tb_tema por postagem 
                                                                         e pegando descrição*/}
                     <p>{postagem.texto}</p>
                     <p>Data: {new Intl.DateTimeFormat(undefined,{
@@ -36,11 +36,13 @@ function CardPostagens ({postagem}:CardPostagensProps) {
         </div>
 
         <div className="flex">
-                <Link to='' className='w-full text-white bg-indigo-400 
-                    hover:bg-indigo-800 flex items-center justify-center py-2'>
+                <Link to={`/editarpostagem/${postagem.id}`}
+                    className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 
+                    flex items-center justify-center py-2'>
                     <button>Editar</button>
                 </Link>
-                <Link to='' className='text-white bg-red-400 
+                <Link to={`/deletarpostagem/${postagem.id}`} 
+                    className='text-white bg-red-400 
                     hover:bg-red-700 w-full flex items-center justify-center'>
                     <button>Deletar</button>
                 </Link>

@@ -8,13 +8,13 @@ function Footer() {
         <>
             <div className="flex justify-center bg-indigo-900 text-white">
                 <div className="container flex flex-col items-center py-4">
-                    <p className='text-lg'>Acesse nossas redes sociais</p>
+                    <p className='text-base'>Acesse nossas redes sociais</p>
                     <div className='flex gap-3'>
-                        <LinkedinLogo size={48} weight='regular' />
-                        <InstagramLogo size={48} weight='regular' />
-                        <FacebookLogo size={48} weight='regular' />
+                        <LinkedinLogo size={42} weight='regular' className='hover:opacity-60'/>
+                        <InstagramLogo size={42} weight='regular' className='hover:opacity-60'/>
+                        <FacebookLogo size={42} weight='regular' className='hover:opacity-60'/>
                     </div>
-                    <p className='text-xl font-thin'>
+                    <p className='text-thin font-thin'>
                         Blog Pessoal Generation | Copyright: {data}
                     </p>
                 </div>
