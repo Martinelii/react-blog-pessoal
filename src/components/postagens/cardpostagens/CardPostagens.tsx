@@ -1,22 +1,44 @@
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem'
+import  { ReactNode } from 'react'
 
 interface CardPostagensProps{
     postagem: Postagem
 }
 
 function CardPostagens ({postagem}:CardPostagensProps) {
-  return (
+
+    let componente: ReactNode
+    const foto = postagem.usuario?.foto
+
+    if(foto?.trim() !== ""){
+        componente = (
+            <>
+                <img src={foto}
+                    className='h-12 rounded-full' 
+                    alt={postagem.usuario?.nome} />
+            </>
+        )
+    }else{
+        componente = (
+            <>
+                <img 
+                src="https://i.imgur.com/oAa6ekW.png"
+                className='h-12 rounded-full' 
+                alt={postagem.usuario?.nome} />
+            </>
+        )
+    }
+
+return (
     <div className='border-slate-900 border
                     flex flex-col rounded overflow-hidden justify-between'>
         
         <div>
             <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
                 {/*Adicionar validação para foto padrão em caso sem fto */}               
-                <img 
-                    src={postagem.usuario?.foto}
-                    className='h-12 rounded-full' 
-                    alt={postagem.usuario?.nome} />
+                {componente}
+
                 <h3 className='text-lg font-bold text-center uppercase'>
                     {postagem.usuario?.nome}
                 </h3>
