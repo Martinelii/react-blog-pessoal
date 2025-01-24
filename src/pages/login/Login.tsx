@@ -37,22 +37,23 @@ function Login() {
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 
                     h-screen place-items-center font-bold ">
-                <form className="flex justify-center items-center flex-col w-1/2 gap-4"
+                <form className="flex justify-center items-center flex-col w-2/3 gap-4
+                                border rounded-md"
                     onSubmit={login}>
-                    <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-                    <div className="flex flex-col w-full">
+                    <h2 className="text-slate-900 text-5xl">Entrar</h2>
+                    <div className="flex flex-col w-full pr-2 pl-2">
                         <label htmlFor="usuario">Usuário</label>
                         <input
                             type="text"
                             id="usuario"
                             name="usuario"
                             placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-slate-700 rounded p-2 "
                             value={usuarioLogin.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full pr-2 pl-2">
                         <label htmlFor="senha">Senha</label>
                         <input
                             type="password"
@@ -80,9 +81,9 @@ function Login() {
                         }
                     </button>
 
-                    <hr className="border-slate-800 w-full" />
+                    <hr className="border-slate-300 w-full" />
 
-                    <p className='font-normal'>
+                    <p className='font-normal pb-2'>
                         Ainda não tem uma conta?{' '}
                         <Link to="/cadastro" className="text-indigo-800 hover:underline font-bold">
                             Cadastre-se

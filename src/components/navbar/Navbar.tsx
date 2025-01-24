@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contexts/AuthContext";
+import ToastAlert from "../../utils/ToastAlert";
 
 function Navbar() {
 
@@ -11,7 +12,7 @@ function Navbar() {
     function logout() {
 
         handleLogout()
-        alert('O Usuário foi desconectado com sucesso!')
+        ToastAlert('O Usuário foi desconectado com sucesso!', 'info')
         navigate('/')
     }
     var componente: React.ReactNode;
@@ -26,7 +27,7 @@ function Navbar() {
                     <Link to='/postagens' className='hover:underline'>Postagens</Link>
                     <Link to='/temas' className='hover:underline'>Temas</Link>
                     <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
-                    Perfil
+                    <Link to='/perfil' className='hover:underline'>Perfil</Link>
                     <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
                 </div>
             </>
